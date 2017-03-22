@@ -89,6 +89,12 @@ public class TestResult {
 		result = s1.resultCalculator(score.getStudentMarksFromDb("mayur", 10080));
 		
 	}
+	//This will be committed in second commit.
+	@Test(expected= Exception.class)
+	public void resultForspecialcharterstudentname() throws SQLException, InValidStudentNameRollNumberException {
+		result = s1.resultCalculator(score.getStudentMarksFromDb("$mayur#4", 10080));
+		
+	}
 	
 	@Ignore
 	@Test
