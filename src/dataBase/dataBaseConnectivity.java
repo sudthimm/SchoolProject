@@ -18,8 +18,9 @@ public class dataBaseConnectivity extends StudentLogin {
 	static Statement mystmt;
 
 	static Connection c;
-
-	public static void getConnection() throws Exception {
+	ArrayList<Double> marksList = new ArrayList<Double>(5);
+// commit three
+/*	public static void getConnection() throws Exception {
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");
@@ -36,9 +37,12 @@ public class dataBaseConnectivity extends StudentLogin {
 			}
 		} catch (Exception e) {
 			System.out.println(e);
+		}finally {
+			
+			c.close();
 		}
 
-	}
+	}*/
 
 
 
@@ -51,7 +55,7 @@ public class dataBaseConnectivity extends StudentLogin {
 
 			PreparedStatement mystmt = null;
 			ResultSet myRs = null;
-			ArrayList<Double> marksList = new ArrayList<Double>(5);
+			
 
 			try {
 
@@ -80,7 +84,7 @@ public class dataBaseConnectivity extends StudentLogin {
 					System.out.println("loop");
 				}
 
-				return (marksList != null && marksList.size() >= 0) ? marksList.get(0) : 0;
+			
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -90,7 +94,7 @@ public class dataBaseConnectivity extends StudentLogin {
 						c.close();
 					} catch (SQLException ex) {
 						System.out.println("DB closed");
-						System.out.println();
+						
 					}
 				}
 			}
@@ -101,7 +105,7 @@ public class dataBaseConnectivity extends StudentLogin {
 		}
 		
 		
-		return 0.0;
+		return (marksList != null && marksList.size() >= 0) ? marksList.get(0) : 0;
 	}
 
 }

@@ -18,12 +18,12 @@ public class DbConnectivityTest {
 	private static dataBaseConnectivity d;
 	
 	
-	@BeforeClass
+	/*@BeforeClass
 	public static void dBConnectivityPass() throws Exception {
 		
 		d.getConnection();	
 		System.out.println("DB connected");
-	}
+	}*/
 	
 	@Before
 	public void setUp(){
