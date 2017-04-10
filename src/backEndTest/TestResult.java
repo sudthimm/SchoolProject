@@ -87,6 +87,14 @@ public class TestResult {
 	}
 
 	
+	@Test
+	public void rresultIsFailIfScoremorethan100() throws SQLException, InValidStudentNameRollNumberException {
+		
+		result = s1.resultCalculator(score.getStudentMarksFromDb("vivek", 10008));
+		assertEquals("error", result);
+
+	}
+	
 	@Test(expected= Exception.class)
 	public void resultForInvalidUserName() throws SQLException, InValidStudentNameRollNumberException {
 		result = s1.resultCalculator(score.getStudentMarksFromDb("mayur", 10080));
