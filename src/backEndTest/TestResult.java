@@ -75,13 +75,7 @@ public class TestResult {
 
 	}
 	
-	@Test(expected= Exception.class)
-	public void rresultIsStudentNameEmpty() throws SQLException, InValidStudentNameRollNumberException {
-
-		result = s1.resultCalculator(score.getStudentMarksFromDb("", 10000));
-	    //assertEquals("pass", result);
-
-	}
+	
 	
 //commit one.
 	@Test
